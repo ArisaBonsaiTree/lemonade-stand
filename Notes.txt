@@ -24,3 +24,10 @@ Product.css --> Product.module.css
 
 !!! import styles from './Product.module.css'
 className='Product' --> {styles.Product}
+
+In countStyle = {
+    align-items <--WE HAVE A HYPHEN 
+    --> alignItems
+}
+
+npm install styled-components

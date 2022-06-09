@@ -1,10 +1,22 @@
-import styles from './Product.module.css'
+const productStyle = {
+    display: 'flex',
+    color: 'blue'
+}
+
+const countStyle = {
+    width: '40%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+}
+
 
 const Product = props => {
     return (
-        <div className={styles.Product}>
-            <h2>{props.name}</h2>
-            <div className={styles.Count}>
+        <div className={productStyle}>
+            <h2 style={{width: '60%'}}>{props.name}</h2>
+            
+            <div className={countStyle}>
                 <button onClick={props.increment}>+</button>
                 <h4>{props.amount}</h4>
                 {props.amount > 0 ? (

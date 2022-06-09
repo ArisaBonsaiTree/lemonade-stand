@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import Card from "../../components/Card/Card"
+import Card from "../../components/Card"
 import Product from "../../components/Product/Product"
 
 
@@ -58,6 +58,8 @@ const Home = () => {
                     />
                 ))}
             </Card>
+
+            <Card></Card>
 
             <Card></Card>
         </div>
