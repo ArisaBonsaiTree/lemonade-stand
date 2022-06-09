@@ -1,16 +1,16 @@
 import styled from 'styled-components' 
 
-const cardStyle = {
-    height: '400px',
-    width: '500px',
-    background: '#CCC',
-    border: '1px solid #FFF'
-}
+// const cardStyle = {
+//     height: '400px',
+//     width: '500px',
+//     background: '#CCC',
+//     border: '1px solid #FFF'
+// }
 
 const StyledCard = styled.div`
     height: '400px';
     width: '500px';
-    background: '#CCC';
+    background: ${({background}) => background};
     border: '1px solid #FFF';
     &:hover{
         background-color: #333;
@@ -19,7 +19,7 @@ const StyledCard = styled.div`
 
 const Card = props => {
     return(
-        <StyledCard>
+        <StyledCard background='blue'>
             {props.children}
             <div style={{
                 color: 'red'
