@@ -1,7 +1,15 @@
+import styled from 'styled-components'
+
 const productStyle = {
     display: 'flex',
     color: 'blue'
 }
+
+
+const StyledProduct = styled.div`
+    display: 'flex';
+    color: 'blue';
+`
 
 const countStyle = {
     width: '40%',
@@ -10,13 +18,19 @@ const countStyle = {
     justifyContent: 'space-around'
 }
 
+const Counter = styled.div`
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+`
 
 const Product = props => {
     return (
-        <div className={productStyle}>
+        <StyledProduct>
             <h2 style={{width: '60%'}}>{props.name}</h2>
             
-            <div className={countStyle}>
+            <Counter>
                 <button onClick={props.increment}>+</button>
                 <h4>{props.amount}</h4>
                 {props.amount > 0 ? (
@@ -24,8 +38,8 @@ const Product = props => {
                 ) : (
                     undefined
                 )}
-            </div>
-        </div>
+            </Counter>
+        </StyledProduct>
     )
 }
 
