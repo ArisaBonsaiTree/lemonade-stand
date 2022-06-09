@@ -12,3 +12,5 @@ We had function and class based components --> functional couldn't manage state
 React 16 --> Allow hooks, which allow us to connect to state from a function componenet
 
 EACH JSX can return a SINGLE COMPONENT
+
+Reduce returns a brand new array without mutating the original array

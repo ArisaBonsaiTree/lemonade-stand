@@ -21,12 +21,42 @@ const Home = () => {
         }
     ])
 
+    const incrementProduct = (name) => {
+        updateProducts(
+            products.reduce((acc, product) => 
+                product.name === name 
+                    ? [...acc, {name, amount: product.amount + 1}] 
+                    : [...acc, product],
+                    []
+            )
+        )
+    }
+
+    const decrementProduct = (name) => {
+        updateProducts(
+            products.reduce((acc, product) => 
+                product.name === name && product.amount > 0
+                    ? [...acc, {name, amount: product.amount - 1}] 
+                    : [...acc, product],
+                    []
+            )
+        )
+    }
+
     const [numLemons, updateNumLemons] = useState(0)
 
     return (
         <div className='Home'>
             <Card>
-                {[<Product key={1} />, <Product key={2} />, <Product key={3} />]}
+                {products.map((product, i) => (
+                    <Product 
+                        key={product.name + i} 
+                        name={product.name} 
+                        amount={product.amount}
+                        increment={() => incrementProduct(product.name)}
+                        decrement={() => decrementProduct(product.name)}
+                    />
+                ))}
             </Card>
         </div>
     )
