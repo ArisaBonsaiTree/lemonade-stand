@@ -1,9 +1,10 @@
 .Product {
     display: flex;
-    color: #000;
+    color: blue;
 }
 
 .Product > h2 {
+    text-align: center;
     width: 60%;
 }
 

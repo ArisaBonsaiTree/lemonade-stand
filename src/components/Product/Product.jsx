@@ -1,18 +1,10 @@
-import './Product.css'
+import styles from './Product.module.css'
 
 const Product = props => {
-
-    // Imperative Style
-    // let decrement = <button onClick={props.decrement}>-</button>
-
-    // if(props.amount <= 0 ){
-    //     decrement = undefined
-    // }
-
     return (
-        <div className='Product'>
+        <div className={styles.Product}>
             <h2>{props.name}</h2>
-            <div className='Count'>
+            <div className={styles.Count}>
                 <button onClick={props.increment}>+</button>
                 <h4>{props.amount}</h4>
                 {props.amount > 0 ? (

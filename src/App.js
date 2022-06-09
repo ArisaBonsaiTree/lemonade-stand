@@ -1,5 +1,3 @@
-import './App.css';
-
 import Home from './Screens/Customer/Home';
 
 const App = () => {

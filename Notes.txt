@@ -14,3 +14,13 @@ React 16 --> Allow hooks, which allow us to connect to state from a function com
 EACH JSX can return a SINGLE COMPONENT
 
 Reduce returns a brand new array without mutating the original array
+
+DONT HAVE THE SAME CLASSNAME WHEN USING BASIC CSS STYLESHEETS
+
+EVERY STYLESHEET IMPORTED --> ~~ COMBINED INTO ONE GLOBAL STYLE SHEET AND SHARED WITH EVERY OTHER componenet
+
+Modular css --> Gives each componenet its own css
+Product.css --> Product.module.css
+
+!!! import styles from './Product.module.css'
+className='Product' --> {styles.Product}
