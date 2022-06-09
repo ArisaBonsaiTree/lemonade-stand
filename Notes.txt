@@ -1,0 +1,14 @@
+npx create-react-app lemonade-stand --> Create a React folder
+
+npm start is how we run the react app
+
+code . --> Open Visual Studio in the current directory
+
+React is all JavaScript, src is where the "React" occurs
+
+index.html -> index.js -> 
+
+We had function and class based components --> functional couldn't manage state
+React 16 --> Allow hooks, which allow us to connect to state from a function componenet
+
+EACH JSX can return a SINGLE COMPONENT
