@@ -31,3 +31,5 @@ In countStyle = {
 }
 
 npm install styled-components
+
+Using colors.co 

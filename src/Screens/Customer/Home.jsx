@@ -1,8 +1,19 @@
 import { useState } from "react"
 
-import Card from "../../components/Card"
-import Product from "../../components/Product/Product"
+import styled from 'styled-components'
 
+import Card from "../../components/Card"
+import Product from "../../components/Product"
+
+
+const StyledHome = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+`
 
 const Home = () => {
     
@@ -43,10 +54,8 @@ const Home = () => {
         )
     }
 
-    const [numLemons, updateNumLemons] = useState(0)
-
     return (
-        <div className='Home'>
+        <StyledHome>
             <Card>
                 {products.map((product, i) => (
                     <Product 
@@ -58,11 +67,7 @@ const Home = () => {
                     />
                 ))}
             </Card>
-
-            <Card></Card>
-
-            <Card></Card>
-        </div>
+        </StyledHome>
     )
 }
 

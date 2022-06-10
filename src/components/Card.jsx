@@ -1,30 +1,25 @@
 import styled from 'styled-components' 
 
-// const cardStyle = {
-//     height: '400px',
-//     width: '500px',
-//     background: '#CCC',
-//     border: '1px solid #FFF'
-// }
-
 const StyledCard = styled.div`
-    height: '400px';
-    width: '500px';
-    background: ${({background}) => background};
-    border: '1px solid #FFF';
-    &:hover{
-        background-color: #333;
-    }
+    height: 300px;
+    width: 400px;
+    background: #16697A;
+    border-radius: 50px;    
+    border: 1px solid #FFF;
+    color: #EBEBD3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
 
 const Card = props => {
     return(
-        <StyledCard background='blue'>
+        <StyledCard background='#ccc'>
             {props.children}
             <div style={{
                 color: 'red'
-            }}>
-                <h2>Hello</h2>
+                }}>
             </div>
         </StyledCard>
     )
