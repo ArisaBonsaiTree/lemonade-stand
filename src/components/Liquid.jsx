@@ -3,7 +3,7 @@ import { keyframes } from 'styled-components'
 
 import Fill from './Fill'
 
-import {ReactComponent as WaveSVG} from '../assets/wave.svg'
+import {ReactComponent as WaveSVG} from '../assets/test.svg'
 
 const waveFront = keyframes`
     100%{
@@ -17,6 +17,12 @@ const waveBack = keyframes`
     }
 `
 
+const OffSet = styled(Fill)`
+    transform: translate(
+        0, 
+        ${({percent}) => `${percent === 100 ? 117 : percent}%`}
+    );
+`
 
 const Wave = styled(WaveSVG)`
     width: 200%;
@@ -37,10 +43,10 @@ const Wave = styled(WaveSVG)`
 
 const Liquid = ({percent, bg, opacity, frontFill, backFill}) => {
     return (
-        <Fill percent={percent} bg={bg} opacity={opacity}>
+        <OffSet percent={percent} bg={bg} opacity={opacity}>
             <Wave className='front' frontFill={frontFill}></Wave>
             <Wave className='back' backFill={backFill}></Wave>
-        </Fill>
+        </OffSet>
     )
 }
 

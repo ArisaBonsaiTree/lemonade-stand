@@ -7,6 +7,8 @@ import Card from "../../components/Card"
 import Glass from "../../components/Glass"
 import Product from "../../components/Product"
 import Fill from "../../components/Fill"
+import Liquid from "../../components/Liquid"
+import IceCube from "../../components/Ice"
 
 const StyledHome = styled.div`
     width: 100vw;
@@ -17,6 +19,14 @@ const StyledHome = styled.div`
     justify-content: space-evenly;
 `
 
+const IceBox = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap-reverse;
+`
+
 const Home = () => {
     
     const [products, updateProducts] = useState([
@@ -24,19 +34,22 @@ const Home = () => {
             name: 'Lemon Juice',
             amount: 0,
             max: 8,
-            unit: 'oz'
+            unit: 'oz',
+            price: .30
         }, 
         {
             name: 'Sugar',
             amount: 0,
             max: 12,
-            unit: 'tsp'
+            unit: 'tsp',
+            price: .15
         }, 
         {
             name: 'Ice Cubes',
-            amount: 0,
+            amount: 2,
             max: 12,
-            unit: 'cubes'
+            unit: 'cubes',
+            price: .05
         }
     ])
 
@@ -73,22 +86,37 @@ const Home = () => {
         )
     }
 
-    const calcPercentLemonJuice = (amount, max) => 100 - (amount / max) * 100
+    const calcPercentLemonJuice = (amount, max, maxFill = 100) => 100 - (amount / max) * maxFill
+
+    // 
+    const calcTotalPrice = () => 
+        new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(
+            products.reduce((total, {amount, price}) => total + (amount * price), 0))
     
+
 
     return (
         <StyledHome>
+            <h1>{calcTotalPrice()}</h1>
             <Glass>
-                <Fill 
+                <Liquid 
                     bg='#FFC85C' 
                     percent={calcPercentLemonJuice(products[0].amount, products[0].max)}
+                    backFill='#FFC85C'
+                    frontFill='#FFD947'
                 />
                 
-                <Fill 
+                <Fill
                     bg='#FFF' 
                     opacity='70%'
-                    percent={calcPercentLemonJuice(products[1].amount, products[1].max)}
+                    percent={calcPercentLemonJuice(products[1].amount, products[1].max, 30)}
                 />
+                <IceBox>
+                    {Array(products[2].amount).fill(undefined).map((_, idx) => (
+                        <IceCube key={idx}/>
+                    ))}
+                </IceBox>
+                
             </Glass>
             <Card>
                 {products.map((product, i) => (

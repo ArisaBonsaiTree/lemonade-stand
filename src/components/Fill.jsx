@@ -8,7 +8,7 @@ const Fill = styled.div`
     height: 100%;
     width: 100%;
     transform: translate(0, ${({percent}) => `${percent}%`});
-    transition: all .5s;
+    transition: all 0.5s;
     opacity: ${({opacity}) => opacity};
 `
 

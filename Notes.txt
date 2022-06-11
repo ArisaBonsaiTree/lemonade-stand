@@ -43,3 +43,5 @@ const array = [1, 2, 3, 4];
 const reducer = (accumulator, currentValue) => accumulator + currentValue; // 1 + 2 + 3 + 4
 
 console.log(array.reduce(reducer)); //10
+
+JavaScripts wants to have something in the array when we map it --> use fill to fill the array with undefined
