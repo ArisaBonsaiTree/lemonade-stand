@@ -26,6 +26,7 @@ const Product = props => {
             <Counter>
                 <Button 
                     onClick={props.increment} 
+                    disabled={props.amount >= props.max}
                     w={buttonWidth} 
                     h={buttonHeight} 
                     bg='lightGreen'
@@ -33,7 +34,7 @@ const Product = props => {
                     +
                 </Button>
 
-                <h4>{props.amount}</h4>
+                <h4>{props.amount} {props.unit}</h4>
 
                 <Button 
                     onClick={props.decrement} 

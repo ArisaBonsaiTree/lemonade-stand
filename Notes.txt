@@ -33,3 +33,13 @@ In countStyle = {
 npm install styled-components
 
 Using colors.co 
+
+CSS: Overflow --> Anything overflow from the orginal div, make it hidden
+
+JavaScript reduce --> 
+
+const array = [1, 2, 3, 4];
+
+const reducer = (accumulator, currentValue) => accumulator + currentValue; // 1 + 2 + 3 + 4
+
+console.log(array.reduce(reducer)); //10
